@@ -4,19 +4,8 @@
 未提出の文字の大きくするサイズの変更、色の変更もできます。    
 English Supported!  
 クソデカ未回答は要望があれば対応します  
-[課題管理のやつ](https://github.com/OhVIton/Assignment-Management-CP)とも共存できます
 ## インストール方法
-`Code` → `Download ZIP`を押してダウンロードします  
-![a](images/photo_04.png)
-ダウンロードしたファイルを右クリック→すべて展開(Windows)か、ダブルクリックで展開(Mac)してください  
-![a](images/photo_05.png)  
-  
-次に、Chromeを開き、アドレスバーに[chrome://extensions](chrome://extensions)と入力し、アクセスします。一番右にある３つ点が縦に並んだやつ→その他のツール→拡張機能でもいいです。 
-![a](images/photo_06.png)  
-以下の画面が開いたら、右上にあるデベロッパーモードをクリックして有効化してください  
-![a](images/photo_08.png)  
-そして、先程展開した`BigBigNotSubmitted-YNU-LMS-master`内にある、`open_here`フォルダを拡張機能のページにドラッグアンドドロップします  
-![a](images/photo_09.png)  
+release にある xpiファイルからインストールしてください
 
 これで完了。おめでとう。  
 
@@ -29,7 +18,7 @@ English Supported!
 ![b](images/photo_01.png)  
 BigBigNotSubmittedをピン留めした後、
 ![c](images/photo_02.png)  
-アイコンをクリックすれば、未提出の文字のサイズ、色も指定できます  
+アイコンをクリックすれば、未提出の文字のサイズ、色も指定できます（カラーコードを入力してください）  
 プレビューも下に表示されます (日本語/Englishはプレビュー用)  
 設定後Saveボタンをクリックし画面更新すれば反映されます。Resetボタンを押せば元(15px, #339933)に戻ります  
 ![c](images/photo_03.png)  
