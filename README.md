@@ -1,4 +1,4 @@
-# BigBigNotSubmitted (クソデカ未提出)
+# BigBigNotSubmitted-Firefox (Firefox版クソデカ未提出)
 
 未提出と未評価の色が一緒で見分けづらい問題を、未提出を大きくすることで解決します。   
 未提出の文字の大きくするサイズの変更、色の変更もできます。    
