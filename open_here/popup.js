@@ -1,32 +1,35 @@
 function save_options() {
     document.innerText = ''
-    chrome.storage.sync.set({
+    var saveOptions = browser.storage.local.set({
         size: document.getElementById('fontSize').value,
         color: document.getElementById('fontColor').value,
         lang: document.getElementById('language').value
-    }, function () {
+    })
+    saveOptions.then(() => {
         restore_options()
     })
 }
 
 function reset_options() {
-    chrome.storage.sync.set({
+    var resetOptions = browser.storage.local.set({
         size: "15",
         color: "#339933",
         lang: "日本語",
         is_rainbow: false
-    }, function () {
+    })
+    resetOptions.then(() => {
         restore_options()
     })
 }
 
 function restore_options() {
-    chrome.storage.sync.get({
+    var restoreOptions = browser.storage.local.get({
         size: "30",
         color: "#339933",
         lang: "日本語",
         is_rainbow: false
-    }, function (items) {
+    })
+    restoreOptions.then((items) => {
         document.innerText = ''
         switch (items.lang) {
             case "日本語":
@@ -45,9 +48,10 @@ function restore_options() {
 }
 
 function enable_rainbow() {
-    chrome.storage.sync.set({
+    var enableRainbow = browser.storage.local.set({
         is_rainbow: true
-    }, function (items) {
+    })
+    enableRainbow.then((items) => {
         const CNUM = 18;   // the number of colors to be set
         const COLORS = new Array(CNUM); // color of font
         const MSEC = 50;   // update interval(millimeters second)
@@ -145,4 +149,13 @@ document.innerText = ''
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('reset').addEventListener('click', reset_options);
 document.getElementById('rainbow').addEventListener('click', enable_rainbow);
+document.getElementById('language').addEventListener('change', () => {
+    var lang = document.getElementById('language').value
+    var setLang = browser.storage.local.set({
+        lang: lang
+    })
+    setLang.then(() => {
+        restore_options()
+    })
+})
 document.addEventListener('DOMContentLoaded', restore_options);

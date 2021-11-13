@@ -12,12 +12,13 @@ greenTextElems.forEach(elem => {
 });
 console.log(notSubmittedElems)
 
-chrome.storage.sync.get({
+var getStorage = browser.storage.local.get({
     size: "30",
     color: "#339933",
     lang: "日本語",
     is_rainbow: false
-}, (items) => {
+})
+getStorage.then((items) => {
     notSubmittedElems.forEach((nsub, index) => {
         nsub.style = `font-size: ${items.size}px; color: ${items.color}`
         nsub.name = 'notsubmitted'
